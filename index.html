@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartes Saint-Valentin — Vivre Clichy</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#e8e8e8;font-family:Arial,sans-serif;padding:30px}
+
+h1{text-align:center;font-size:16pt;color:#333;margin-bottom:10px}
+p.intro{text-align:center;font-size:10pt;color:#777;margin-bottom:30px}
+
+.option{
+  margin-bottom:30px;
+  display:flex;flex-direction:column;align-items:center;
+}
+.option-title{
+  font-size:11pt;color:#555;margin-bottom:8px;
+  font-weight:bold;letter-spacing:0.5px;
+}
+.quad{
+  display:flex;gap:10px;align-items:flex-start;
+  justify-content:center;flex-wrap:wrap;
+}
+.variant{display:flex;gap:10px;align-items:flex-start}
+.variant-gap{
+  width:1px;background:#ccc;
+  align-self:stretch;margin:0 8px;
+}
+.side-label{
+  font-size:8pt;color:#999;text-align:center;
+  margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;
+}
+
+/* ===== CARD ===== */
+.card{
+  width:85mm;height:55mm;
+  border:0.3mm dashed #aaa;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  position:relative;overflow:hidden;
+  border-radius:1mm;
+}
+.recto{background:linear-gradient(135deg,#ff3800 0%,#ff9dc7 100%)}
+.verso{background:linear-gradient(315deg,#ff3800 0%,#ff9dc7 100%)}
+
+/* ===== MSG 1: 3 lignes (Clichy, veux-tu m'épouser ?) ===== */
+.msg1 .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  color:#fff;font-style:italic;
+  text-align:center;line-height:1.2;
+  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+}
+.msg1 .line1{font-size:8mm;margin-bottom:1mm}
+.msg1 .line2{font-size:6.5mm}
+.msg1 .line3{font-size:8mm;margin-top:0.5mm}
+
+/* ===== MSG 2: année + sous-titre ===== */
+.msg2 .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  color:#fff;text-align:center;
+  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+}
+.msg2 .year{font-size:11mm;font-weight:bold;letter-spacing:1mm;line-height:1}
+.msg2 .sub{font-size:6mm;font-style:italic;line-height:1.4;margin-top:2mm}
+
+/* ===== MSG 3: nom + cœur + nom ===== */
+.msg3 .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  color:#fff;text-align:center;
+  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+}
+.msg3 .name{font-size:9mm;font-style:italic;letter-spacing:0.5mm;line-height:1}
+.msg3 .heart{font-size:10mm;line-height:1;margin:1.5mm 0;font-style:normal}
+
+/* ===== MSG 4: 2 lignes 7.5mm ===== */
+.msg4 .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  color:#fff;font-style:italic;
+  text-align:center;line-height:1.2;
+  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+}
+.msg4 .line1{font-size:7.5mm;margin-bottom:1mm}
+.msg4 .line2{font-size:7.5mm}
+
+/* ===== MSG 5: 1 ligne 10mm (très court) ===== */
+.msg5 .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  color:#fff;font-style:italic;
+  text-align:center;line-height:1;
+  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+  font-size:10mm;
+}
+
+/* ===== MSG 6: 2 lignes 6mm (textes plus longs) ===== */
+.msg6 .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  color:#fff;font-style:italic;
+  text-align:center;line-height:1.2;
+  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+}
+.msg6 .line1{font-size:6mm;margin-bottom:1mm}
+.msg6 .line2{font-size:6mm}
+
+/* ===== MSG 7: 3 lignes 5.5mm (les plus longs) ===== */
+.msg7 .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  color:#fff;font-style:italic;
+  text-align:center;line-height:1.2;
+  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+}
+.msg7 .line1{font-size:5.5mm;margin-bottom:0.5mm}
+.msg7 .line2{font-size:5.5mm;margin-bottom:0.5mm}
+.msg7 .line3{font-size:5.5mm}
+
+/* ===== VERSO CONTENT ===== */
+.verso-content{
+  text-align:center;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.verso-name{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  color:#fff;font-size:6mm;font-style:italic;
+  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+  letter-spacing:0.3mm;
+}
+.verso-sep{
+  width:12mm;height:0.3mm;
+  background:rgba(255,255,255,0.5);
+  margin:2.5mm 0;border-radius:1mm;
+}
+.verso-brand{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;font-size:3mm;
+  letter-spacing:2mm;text-transform:uppercase;opacity:0.85;
+}
+.card-qr{
+  position:absolute;bottom:2mm;right:2mm;
+  width:11mm;height:11mm;
+  border-radius:0.8mm;overflow:hidden;
+  background:#fff;padding:0.5mm;
+}
+.card-qr svg{width:100%;height:100%;display:block}
+
+/* ===== WHITE VARIANTS ===== */
+.recto-w{background:#fff}
+.verso-w{background:#fff}
+
+/* Gradient text utility */
+.grad-text{
+  background:linear-gradient(135deg,#ff3800 0%,#ff9dc7 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* White msg1 */
+.msg1w .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  font-style:italic;text-align:center;line-height:1.2;
+}
+.msg1w .line1{font-size:8mm;margin-bottom:1mm}
+.msg1w .line2{font-size:6.5mm}
+.msg1w .line3{font-size:8mm;margin-top:0.5mm}
+
+/* White msg2 */
+.msg2w .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  text-align:center;
+}
+.msg2w .year{font-size:11mm;font-weight:bold;letter-spacing:1mm;line-height:1}
+.msg2w .sub{font-size:6mm;font-style:italic;line-height:1.4;margin-top:2mm}
+
+/* White msg3 */
+.msg3w .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  text-align:center;
+}
+.msg3w .name{font-size:9mm;font-style:italic;letter-spacing:0.5mm;line-height:1}
+.msg3w .heart{font-size:10mm;line-height:1;margin:1.5mm 0;font-style:normal;
+  -webkit-text-fill-color:#ff3800;
+}
+
+/* White msg4 */
+.msg4w .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  font-style:italic;text-align:center;line-height:1.2;
+}
+.msg4w .line1{font-size:7.5mm;margin-bottom:1mm}
+.msg4w .line2{font-size:7.5mm}
+
+/* White msg5 */
+.msg5w .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  font-style:italic;text-align:center;line-height:1;
+  font-size:10mm;
+}
+
+/* White msg6 */
+.msg6w .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  font-style:italic;text-align:center;line-height:1.2;
+}
+.msg6w .line1{font-size:6mm;margin-bottom:1mm}
+.msg6w .line2{font-size:6mm}
+
+/* White msg7 */
+.msg7w .line{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  font-style:italic;text-align:center;line-height:1.2;
+}
+.msg7w .line1{font-size:5.5mm;margin-bottom:0.5mm}
+.msg7w .line2{font-size:5.5mm;margin-bottom:0.5mm}
+.msg7w .line3{font-size:5.5mm}
+
+/* White verso */
+.verso-w .verso-name{
+  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
+  font-size:6mm;font-style:italic;letter-spacing:0.3mm;
+}
+.verso-w .verso-sep{
+  background:linear-gradient(90deg,#ff3800,#ff9dc7);opacity:0.5;
+}
+.verso-w .verso-brand{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:3mm;letter-spacing:2mm;text-transform:uppercase;
+}
+.verso-w .card-qr{background:#fff;border:0.3mm solid #eee}
+
+/* ===== THEME SEPARATOR ===== */
+.theme-sep{
+  text-align:center;font-size:12pt;color:#ff3800;
+  font-weight:bold;letter-spacing:2px;text-transform:uppercase;
+  margin:40px auto 20px;
+  border-top:2px solid #ff9dc7;padding-top:18px;
+  width:500px;
+}
+</style>
+</head>
+<body>
+
+<h1>Cartes roses Saint-Valentin — Vivre Clichy</h1>
+<p class="intro">17 messages &middot; 4 th&egrave;mes &middot; D&eacute;grad&eacute; + blanc &middot; Format 8.5 &times; 5.5 cm</p>
+
+<script>
+// === QR Code Generator (V2, EC Level L, Byte) ===
+var QR=(function(){
+  var EXP=[],LOG=[];
+  (function(){var x=1;for(var i=0;i<256;i++){EXP[i]=x;LOG[x]=i;x<<=1;if(x&256)x^=0x11d;}})();
+  function gfMul(a,b){if(a===0||b===0)return 0;return EXP[(LOG[a]+LOG[b])%255];}
+  function rsGenPoly(n){var g=[1];for(var i=0;i<n;i++){var ng=[];for(var k=0;k<=g.length;k++)ng[k]=0;ng[0]=g[0];for(var j=1;j<g.length;j++)ng[j]=g[j]^gfMul(g[j-1],EXP[i]);ng[g.length]=gfMul(g[g.length-1],EXP[i]);g=ng;}return g;}
+  function rsEncode(data,nsym){var gen=rsGenPoly(nsym);var msg=data.slice();for(var i=0;i<nsym;i++)msg.push(0);for(var i=0;i<data.length;i++){var c=msg[i];if(c!==0){for(var j=0;j<gen.length;j++)msg[i+j]^=gfMul(gen[j],c);}}return msg.slice(data.length);}
+  function encodeData(text){var bytes=[];for(var i=0;i<text.length;i++)bytes.push(text.charCodeAt(i));var bits=[];bits.push(0,1,0,0);for(var i=7;i>=0;i--)bits.push((bytes.length>>i)&1);for(var i=0;i<bytes.length;i++)for(var j=7;j>=0;j--)bits.push((bytes[i]>>j)&1);var cap=34*8,t=Math.min(4,cap-bits.length);for(var i=0;i<t;i++)bits.push(0);while(bits.length%8)bits.push(0);var cw=[];for(var i=0;i<bits.length;i+=8){var b=0;for(var j=0;j<8;j++)b=(b<<1)|(bits[i+j]||0);cw.push(b);}var p=0;while(cw.length<34){cw.push(p%2===0?0xEC:0x11);p++;}return cw;}
+  function fmtBits(mask){var d=(1<<3)|mask,r=d<<10;for(var i=4;i>=0;i--)if(r&(1<<(i+10)))r^=0x537<<i;return((d<<10)|r)^0x5412;}
+  function generate(text){
+    var S=25,mod=[],fn=[];
+    for(var r=0;r<S;r++){mod[r]=[];fn[r]=[];for(var c=0;c<S;c++){mod[r][c]=0;fn[r][c]=false;}}
+    function set(r,c,dk){if(r>=0&&r<S&&c>=0&&c<S){mod[r][c]=dk?1:0;fn[r][c]=true;}}
+    function finder(or,oc){for(var dr=-1;dr<=7;dr++)for(var dc=-1;dc<=7;dc++){var r=or+dr,c=oc+dc;if(r<0||r>=S||c<0||c>=S)continue;var sep=dr===-1||dr===7||dc===-1||dc===7;var out=dr===0||dr===6||dc===0||dc===6;var inn=dr>=2&&dr<=4&&dc>=2&&dc<=4;set(r,c,!sep&&(out||inn));}}
+    finder(0,0);finder(0,S-7);finder(S-7,0);
+    for(var dr=-2;dr<=2;dr++)for(var dc=-2;dc<=2;dc++){var r=18+dr,c=18+dc;if(!fn[r][c])set(r,c,Math.abs(dr)===2||Math.abs(dc)===2||(dr===0&&dc===0));}
+    for(var i=8;i<S-8;i++){if(!fn[6][i])set(6,i,i%2===0);if(!fn[i][6])set(i,6,i%2===0);}
+    set(S-8,8,true);
+    for(var i=0;i<=8;i++){if(!fn[8][i])fn[8][i]=true;if(!fn[i][8])fn[i][8]=true;}
+    for(var i=0;i<8;i++)if(!fn[8][S-1-i])fn[8][S-1-i]=true;
+    for(var i=0;i<7;i++)if(!fn[S-1-i][8])fn[S-1-i][8]=true;
+    var dataCW=encodeData(text),ecCW=rsEncode(dataCW,10),allCW=dataCW.concat(ecCW);
+    var bits=[];for(var i=0;i<allCW.length;i++)for(var j=7;j>=0;j--)bits.push((allCW[i]>>j)&1);
+    var bi=0,up=true;
+    for(var right=S-1;right>=1;right-=2){if(right===6)right=5;for(var v=0;v<S;v++){var row=up?S-1-v:v;for(var j=0;j<2;j++){var col=right-j;if(col>=0&&col<S&&!fn[row][col]){if(bi<bits.length)mod[row][col]=bits[bi++];}}}up=!up;}
+    var bestP=1e9,bestMod=null;
+    for(var m=0;m<8;m++){
+      var mk=[];for(var r=0;r<S;r++){mk[r]=mod[r].slice();for(var c=0;c<S;c++){if(fn[r][c])continue;var inv=false;switch(m){case 0:inv=(r+c)%2===0;break;case 1:inv=r%2===0;break;case 2:inv=c%3===0;break;case 3:inv=(r+c)%3===0;break;case 4:inv=((r>>1)+Math.floor(c/3))%2===0;break;case 5:inv=(r*c)%2+(r*c)%3===0;break;case 6:inv=((r*c)%2+(r*c)%3)%2===0;break;case 7:inv=((r+c)%2+(r*c)%3)%2===0;break;}if(inv)mk[r][c]^=1;}}
+      var fb=fmtBits(m);
+      var l1=[[8,0],[8,1],[8,2],[8,3],[8,4],[8,5],[8,7],[8,8],[7,8],[5,8],[4,8],[3,8],[2,8],[1,8],[0,8]];
+      var l2=[[S-1,8],[S-2,8],[S-3,8],[S-4,8],[S-5,8],[S-6,8],[S-7,8],[8,S-8],[8,S-7],[8,S-6],[8,S-5],[8,S-4],[8,S-3],[8,S-2],[8,S-1]];
+      for(var i=0;i<15;i++){var bit=(fb>>i)&1;mk[l1[i][0]][l1[i][1]]=bit;mk[l2[i][0]][l2[i][1]]=bit;}
+      var pen=0;
+      for(var r=0;r<S;r++){var cnt=1;for(var c=1;c<S;c++){if(mk[r][c]===mk[r][c-1])cnt++;else{if(cnt>=5)pen+=cnt-2;cnt=1;}}if(cnt>=5)pen+=cnt-2;}
+      for(var c=0;c<S;c++){var cnt=1;for(var r=1;r<S;r++){if(mk[r][c]===mk[r-1][c])cnt++;else{if(cnt>=5)pen+=cnt-2;cnt=1;}}if(cnt>=5)pen+=cnt-2;}
+      for(var r=0;r<S-1;r++)for(var c=0;c<S-1;c++){var v=mk[r][c];if(v===mk[r][c+1]&&v===mk[r+1][c]&&v===mk[r+1][c+1])pen+=3;}
+      var p1=[1,0,1,1,1,0,1,0,0,0,0],p2=[0,0,0,0,1,0,1,1,1,0,1];
+      for(var r=0;r<S;r++)for(var c=0;c<=S-11;c++){var a=true,b=true;for(var k=0;k<11;k++){if(mk[r][c+k]!==p1[k])a=false;if(mk[r][c+k]!==p2[k])b=false;}if(a)pen+=40;if(b)pen+=40;}
+      for(var c=0;c<S;c++)for(var r=0;r<=S-11;r++){var a=true,b=true;for(var k=0;k<11;k++){if(mk[r+k][c]!==p1[k])a=false;if(mk[r+k][c]!==p2[k])b=false;}if(a)pen+=40;if(b)pen+=40;}
+      var dk=0;for(var r=0;r<S;r++)for(var c=0;c<S;c++)if(mk[r][c])dk++;
+      var pct=dk*100/(S*S),p5=Math.floor(pct/5)*5;
+      pen+=Math.min(Math.abs(p5-50),Math.abs(p5+5-50))/5*10;
+      if(pen<bestP){bestP=pen;bestMod=mk;}
+    }
+    return bestMod;
+  }
+  function toSVG(matrix){
+    var S=matrix.length,q=2,total=S+2*q;
+    var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+total+' '+total+'">';
+    svg+='<rect width="'+total+'" height="'+total+'" fill="#fff"/>';
+    for(var r=0;r<S;r++)for(var c=0;c<S;c++)
+      if(matrix[r][c])svg+='<rect x="'+(c+q)+'" y="'+(r+q)+'" width="1" height="1" fill="#333"/>';
+    svg+='</svg>';return svg;
+  }
+  return{generate:generate,toSVG:toSVG};
+})();
+
+// === Build preview ===
+(function(){
+  var qrSVG=QR.toSVG(QR.generate("https://vivre-clichy.fr"));
+
+  var versoHTML=
+    '<div class="verso-content"><div class="verso-name">Julie Martinez</div>'+
+    '<div class="verso-sep"></div><div class="verso-brand">Vivre Clichy</div></div>'+
+    '<div class="card-qr">'+qrSVG+'</div>';
+
+  var versoWHTML=
+    '<div class="verso-content"><div class="verso-name grad-text">Julie Martinez</div>'+
+    '<div class="verso-sep"></div><div class="verso-brand grad-text">Vivre Clichy</div></div>'+
+    '<div class="card-qr">'+qrSVG+'</div>';
+
+  /* ── Messages par thème ── */
+  var themes=[
+    { title:'Amour', messages:[
+      { name:'Clichy, veux-tu m\u2019\u00e9pouser\u00a0?',
+        cls:'msg1', clsW:'msg1w',
+        html:'<div class="line line1">Clichy,</div><div class="line line2">veux-tu</div><div class="line line3">m\u2019\u00e9pouser\u00a0?</div>',
+        htmlW:'<div class="line line1 grad-text">Clichy,</div><div class="line line2 grad-text">veux-tu</div><div class="line line3 grad-text">m\u2019\u00e9pouser\u00a0?</div>' },
+      { name:'Clichy, mon amour',
+        cls:'msg4', clsW:'msg4w',
+        html:'<div class="line line1">Clichy,</div><div class="line line2">mon amour</div>',
+        htmlW:'<div class="line line1 grad-text">Clichy,</div><div class="line line2 grad-text">mon amour</div>' },
+      { name:'Aimons Clichy',
+        cls:'msg5', clsW:'msg5w',
+        html:'<div class="line">Aimons Clichy</div>',
+        htmlW:'<div class="line grad-text">Aimons Clichy</div>' },
+      { name:'Par amour pour Clichy',
+        cls:'msg4', clsW:'msg4w',
+        html:'<div class="line line1">Par amour</div><div class="line line2">pour Clichy</div>',
+        htmlW:'<div class="line line1 grad-text">Par amour</div><div class="line line2 grad-text">pour Clichy</div>' },
+      { name:'L\u2019amour commence ici',
+        cls:'msg4', clsW:'msg4w',
+        html:'<div class="line line1">L\u2019amour</div><div class="line line2">commence ici</div>',
+        htmlW:'<div class="line line1 grad-text">L\u2019amour</div><div class="line line2 grad-text">commence ici</div>' },
+      { name:'Clichy, je t\u2019aime',
+        cls:'msg4', clsW:'msg4w',
+        html:'<div class="line line1">Clichy,</div><div class="line line2">je t\u2019aime</div>',
+        htmlW:'<div class="line line1 grad-text">Clichy,</div><div class="line line2 grad-text">je t\u2019aime</div>' },
+      { name:'2026, le temps de l\u2019amour',
+        cls:'msg2', clsW:'msg2w',
+        html:'<div class="line year">2026</div><div class="line sub">le temps<br>de l\u2019amour</div>',
+        htmlW:'<div class="line year grad-text">2026</div><div class="line sub grad-text">le temps<br>de l\u2019amour</div>' },
+      { name:'2026, Clichy s\u2019aime',
+        cls:'msg2', clsW:'msg2w',
+        html:'<div class="line year">2026</div><div class="line sub">Clichy s\u2019aime</div>',
+        htmlW:'<div class="line year grad-text">2026</div><div class="line sub grad-text">Clichy s\u2019aime</div>' },
+      { name:'Clichy \u2764 Julie',
+        cls:'msg3', clsW:'msg3w',
+        html:'<div class="line name">Clichy</div><div class="line heart">\u2764</div><div class="line name">Julie</div>',
+        htmlW:'<div class="line name grad-text">Clichy</div><div class="line heart grad-text">\u2764</div><div class="line name grad-text">Julie</div>' }
+    ]},
+    { title:'Solidarit\u00e9', messages:[
+      { name:'Ensemble pour Clichy',
+        cls:'msg4', clsW:'msg4w',
+        html:'<div class="line line1">Ensemble</div><div class="line line2">pour Clichy</div>',
+        htmlW:'<div class="line line1 grad-text">Ensemble</div><div class="line line2 grad-text">pour Clichy</div>' },
+      { name:'Unis par l\u2019amour de Clichy',
+        cls:'msg6', clsW:'msg6w',
+        html:'<div class="line line1">Unis par l\u2019amour</div><div class="line line2">de Clichy</div>',
+        htmlW:'<div class="line line1 grad-text">Unis par l\u2019amour</div><div class="line line2 grad-text">de Clichy</div>' },
+      { name:'La solidarit\u00e9, c\u2019est de l\u2019amour',
+        cls:'msg6', clsW:'msg6w',
+        html:'<div class="line line1">La solidarit\u00e9,</div><div class="line line2">c\u2019est de l\u2019amour</div>',
+        htmlW:'<div class="line line1 grad-text">La solidarit\u00e9,</div><div class="line line2 grad-text">c\u2019est de l\u2019amour</div>' }
+    ]},
+    { title:'Amour + Solidarit\u00e9', messages:[
+      { name:'Amour et solidarit\u00e9',
+        cls:'msg4', clsW:'msg4w',
+        html:'<div class="line line1">Amour</div><div class="line line2">et solidarit\u00e9</div>',
+        htmlW:'<div class="line line1 grad-text">Amour</div><div class="line line2 grad-text">et solidarit\u00e9</div>' },
+      { name:'2026 : amour et solidarit\u00e9 pour Clichy',
+        cls:'msg7', clsW:'msg7w',
+        html:'<div class="line line1">2026 :</div><div class="line line2">amour et solidarit\u00e9</div><div class="line line3">pour Clichy</div>',
+        htmlW:'<div class="line line1 grad-text">2026 :</div><div class="line line2 grad-text">amour et solidarit\u00e9</div><div class="line line3 grad-text">pour Clichy</div>' },
+      { name:'Notre programme : amour et solidarit\u00e9\u00a0!',
+        cls:'msg6', clsW:'msg6w',
+        html:'<div class="line line1">Notre programme :</div><div class="line line2">amour et solidarit\u00e9\u00a0!</div>',
+        htmlW:'<div class="line line1 grad-text">Notre programme :</div><div class="line line2 grad-text">amour et solidarit\u00e9\u00a0!</div>' }
+    ]},
+    { title:'Audacieux / D\u00e9cal\u00e9', messages:[
+      { name:'Clichy a besoin d\u2019amour',
+        cls:'msg6', clsW:'msg6w',
+        html:'<div class="line line1">Clichy a besoin</div><div class="line line2">d\u2019amour</div>',
+        htmlW:'<div class="line line1 grad-text">Clichy a besoin</div><div class="line line2 grad-text">d\u2019amour</div>' },
+      { name:'Faisons de Clichy une ville d\u2019amour',
+        cls:'msg6', clsW:'msg6w',
+        html:'<div class="line line1">Faisons de Clichy</div><div class="line line2">une ville d\u2019amour</div>',
+        htmlW:'<div class="line line1 grad-text">Faisons de Clichy</div><div class="line line2 grad-text">une ville d\u2019amour</div>' }
+    ]}
+  ];
+
+  /* ── Build ── */
+  var n=0;
+  for(var t=0;t<themes.length;t++){
+    var sep=document.createElement('div');
+    sep.className='theme-sep';
+    sep.textContent=themes[t].title;
+    document.body.appendChild(sep);
+
+    var msgs=themes[t].messages;
+    for(var m=0;m<msgs.length;m++){
+      n++;
+      var msg=msgs[m];
+      var opt=document.createElement('div');
+      opt.className='option';
+      opt.innerHTML='<div class="option-title">'+n+'. '+msg.name+'</div>';
+
+      var quad=document.createElement('div');
+      quad.className='quad';
+
+      // Gradient pair
+      var v1=document.createElement('div');
+      v1.className='variant';
+      var rc1=document.createElement('div');
+      rc1.innerHTML='<div class="side-label">Recto</div>';
+      var card1=document.createElement('div');
+      card1.className='card recto '+msg.cls;
+      card1.innerHTML=msg.html;
+      rc1.appendChild(card1);
+      v1.appendChild(rc1);
+      var vc1=document.createElement('div');
+      vc1.innerHTML='<div class="side-label">Verso</div>';
+      var card2=document.createElement('div');
+      card2.className='card verso';
+      card2.innerHTML=versoHTML;
+      vc1.appendChild(card2);
+      v1.appendChild(vc1);
+      quad.appendChild(v1);
+
+      // Separator
+      var vgap=document.createElement('div');
+      vgap.className='variant-gap';
+      quad.appendChild(vgap);
+
+      // White pair
+      var v2=document.createElement('div');
+      v2.className='variant';
+      var rc2=document.createElement('div');
+      rc2.innerHTML='<div class="side-label">Recto blanc</div>';
+      var card3=document.createElement('div');
+      card3.className='card recto-w '+msg.clsW;
+      card3.innerHTML=msg.htmlW;
+      rc2.appendChild(card3);
+      v2.appendChild(rc2);
+      var vc2=document.createElement('div');
+      vc2.innerHTML='<div class="side-label">Verso blanc</div>';
+      var card4=document.createElement('div');
+      card4.className='card verso-w';
+      card4.innerHTML=versoWHTML;
+      vc2.appendChild(card4);
+      v2.appendChild(vc2);
+      quad.appendChild(v2);
+
+      opt.appendChild(quad);
+      document.body.appendChild(opt);
+    }
+  }
+})();
+</script>
+</body>
+</html>
