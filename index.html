@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cartes Saint-Valentin — Vivre Clichy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#e8e8e8;font-family:Arial,sans-serif;padding:30px}
@@ -41,15 +44,22 @@ p.intro{text-align:center;font-size:10pt;color:#777;margin-bottom:30px}
   -webkit-print-color-adjust:exact;
   print-color-adjust:exact;
 }
-.recto{background:linear-gradient(135deg,#ff3800 0%,#ff9dc7 100%)}
-.verso{background:linear-gradient(315deg,#ff3800 0%,#ff9dc7 100%)}
+
+/* ===== THEME COLORS ===== */
+.recto-rose{background:#FF69B4}
+.verso-rose{background:#FF69B4}
+.recto-orange{background:#FF6B00}
+.verso-orange{background:#FF6B00}
+.recto-degrade{background:linear-gradient(135deg,#E8453C,#FF85B3)}
+.verso-degrade{background:linear-gradient(135deg,#E8453C,#FF85B3)}
+.recto-jaune{background:#F5B800}
+.verso-jaune{background:#F5B800}
 
 /* ===== MSG 1: 3 lignes (Clichy, veux-tu m'épouser ?) ===== */
 .msg1 .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  color:#fff;font-style:italic;
+  font-family:'DM Sans',Arial,sans-serif;
+  color:#FFF5E6;font-weight:700;
   text-align:center;line-height:1.2;
-  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
 }
 .msg1 .line1{font-size:8mm;margin-bottom:1mm}
 .msg1 .line2{font-size:6.5mm}
@@ -57,57 +67,51 @@ p.intro{text-align:center;font-size:10pt;color:#777;margin-bottom:30px}
 
 /* ===== MSG 2: année + sous-titre ===== */
 .msg2 .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  color:#fff;text-align:center;
-  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+  font-family:'DM Sans',Arial,sans-serif;
+  color:#FFF5E6;font-weight:700;text-align:center;
 }
 .msg2 .year{font-size:11mm;font-weight:bold;letter-spacing:1mm;line-height:1}
-.msg2 .sub{font-size:6mm;font-style:italic;line-height:1.4;margin-top:2mm}
+.msg2 .sub{font-size:6mm;font-weight:500;line-height:1.4;margin-top:2mm}
 
 /* ===== MSG 3: nom + cœur + nom ===== */
 .msg3 .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  color:#fff;text-align:center;
-  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+  font-family:'DM Sans',Arial,sans-serif;
+  color:#FFF5E6;font-weight:700;text-align:center;
 }
-.msg3 .name{font-size:9mm;font-style:italic;letter-spacing:0.5mm;line-height:1}
+.msg3 .name{font-size:9mm;letter-spacing:0.5mm;line-height:1}
 .msg3 .heart{font-size:10mm;line-height:1;margin:1.5mm 0;font-style:normal}
 
 /* ===== MSG 4: 2 lignes 7.5mm ===== */
 .msg4 .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  color:#fff;font-style:italic;
+  font-family:'DM Sans',Arial,sans-serif;
+  color:#FFF5E6;font-weight:700;
   text-align:center;line-height:1.2;
-  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
 }
 .msg4 .line1{font-size:7.5mm;margin-bottom:1mm}
 .msg4 .line2{font-size:7.5mm}
 
 /* ===== MSG 5: 1 ligne 10mm (très court) ===== */
 .msg5 .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  color:#fff;font-style:italic;
+  font-family:'DM Sans',Arial,sans-serif;
+  color:#FFF5E6;font-weight:700;
   text-align:center;line-height:1;
-  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
   font-size:10mm;
 }
 
 /* ===== MSG 6: 2 lignes 6mm (textes plus longs) ===== */
 .msg6 .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  color:#fff;font-style:italic;
+  font-family:'DM Sans',Arial,sans-serif;
+  color:#FFF5E6;font-weight:700;
   text-align:center;line-height:1.2;
-  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
 }
 .msg6 .line1{font-size:6mm;margin-bottom:1mm}
 .msg6 .line2{font-size:6mm}
 
 /* ===== MSG 7: 3 lignes 5.5mm (les plus longs) ===== */
 .msg7 .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  color:#fff;font-style:italic;
+  font-family:'DM Sans',Arial,sans-serif;
+  color:#FFF5E6;font-weight:700;
   text-align:center;line-height:1.2;
-  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
 }
 .msg7 .line1{font-size:5.5mm;margin-bottom:0.5mm}
 .msg7 .line2{font-size:5.5mm;margin-bottom:0.5mm}
@@ -120,19 +124,18 @@ p.intro{text-align:center;font-size:10pt;color:#777;margin-bottom:30px}
   align-items:center;justify-content:center;
 }
 .verso-name{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  color:#fff;font-size:6mm;font-style:italic;
-  text-shadow:0 0.5mm 2mm rgba(0,0,0,0.12);
+  font-family:'DM Sans',Arial,sans-serif;
+  color:#FFF5E6;font-size:6mm;font-weight:700;
   letter-spacing:0.3mm;
 }
 .verso-sep{
   width:12mm;height:0.3mm;
-  background:rgba(255,255,255,0.5);
+  background:rgba(255,245,230,0.5);
   margin:2.5mm 0;border-radius:1mm;
 }
 .verso-brand{
-  font-family:Arial,Helvetica,sans-serif;
-  color:#fff;font-size:3mm;
+  font-family:'DM Sans',Arial,sans-serif;
+  color:#FFF5E6;font-size:3mm;
   letter-spacing:2mm;text-transform:uppercase;opacity:0.85;
 }
 .card-qr{
@@ -143,104 +146,20 @@ p.intro{text-align:center;font-size:10pt;color:#777;margin-bottom:30px}
 }
 .card-qr svg{width:100%;height:100%;display:block}
 
-/* ===== WHITE VARIANTS ===== */
-.recto-w{background:#fff}
-.verso-w{background:#fff}
-
-/* Gradient text utility */
-.grad-text{
-  background:linear-gradient(135deg,#ff3800 0%,#ff9dc7 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-
-/* White msg1 */
-.msg1w .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  font-style:italic;text-align:center;line-height:1.2;
-}
-.msg1w .line1{font-size:8mm;margin-bottom:1mm}
-.msg1w .line2{font-size:6.5mm}
-.msg1w .line3{font-size:8mm;margin-top:0.5mm}
-
-/* White msg2 */
-.msg2w .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  text-align:center;
-}
-.msg2w .year{font-size:11mm;font-weight:bold;letter-spacing:1mm;line-height:1}
-.msg2w .sub{font-size:6mm;font-style:italic;line-height:1.4;margin-top:2mm}
-
-/* White msg3 */
-.msg3w .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  text-align:center;
-}
-.msg3w .name{font-size:9mm;font-style:italic;letter-spacing:0.5mm;line-height:1}
-.msg3w .heart{font-size:10mm;line-height:1;margin:1.5mm 0;font-style:normal;
-  -webkit-text-fill-color:#ff3800;
-}
-
-/* White msg4 */
-.msg4w .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  font-style:italic;text-align:center;line-height:1.2;
-}
-.msg4w .line1{font-size:7.5mm;margin-bottom:1mm}
-.msg4w .line2{font-size:7.5mm}
-
-/* White msg5 */
-.msg5w .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  font-style:italic;text-align:center;line-height:1;
-  font-size:10mm;
-}
-
-/* White msg6 */
-.msg6w .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  font-style:italic;text-align:center;line-height:1.2;
-}
-.msg6w .line1{font-size:6mm;margin-bottom:1mm}
-.msg6w .line2{font-size:6mm}
-
-/* White msg7 */
-.msg7w .line{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  font-style:italic;text-align:center;line-height:1.2;
-}
-.msg7w .line1{font-size:5.5mm;margin-bottom:0.5mm}
-.msg7w .line2{font-size:5.5mm;margin-bottom:0.5mm}
-.msg7w .line3{font-size:5.5mm}
-
-/* White verso */
-.verso-w .verso-name{
-  font-family:Georgia,'Times New Roman','Palatino Linotype',serif;
-  font-size:6mm;font-style:italic;letter-spacing:0.3mm;
-}
-.verso-w .verso-sep{
-  background:linear-gradient(90deg,#ff3800,#ff9dc7);opacity:0.5;
-}
-.verso-w .verso-brand{
-  font-family:Arial,Helvetica,sans-serif;
-  font-size:3mm;letter-spacing:2mm;text-transform:uppercase;
-}
-.verso-w .card-qr{background:#fff;border:0.3mm solid #eee}
-
 /* ===== THEME SEPARATOR ===== */
 .theme-sep{
-  text-align:center;font-size:12pt;color:#ff3800;
+  text-align:center;font-size:12pt;
   font-weight:bold;letter-spacing:2px;text-transform:uppercase;
   margin:40px auto 20px;
-  border-top:2px solid #ff9dc7;padding-top:18px;
+  border-top:2px solid;padding-top:18px;
   width:500px;
 }
 </style>
 </head>
 <body>
 
-<h1>Cartes roses Saint-Valentin — Vivre Clichy</h1>
-<p class="intro">17 messages &middot; 4 th&egrave;mes &middot; D&eacute;grad&eacute; + blanc &middot; Format 8.5 &times; 5.5 cm</p>
+<h1>Cartes Saint-Valentin — Vivre Clichy</h1>
+<p class="intro">17 messages &middot; 4 th&egrave;mes &middot; 4 couleurs &middot; Format 8.5 &times; 5.5 cm</p>
 
 <script>
 // === QR Code Generator (V2, EC Level L, Byte) ===
@@ -309,100 +228,81 @@ var QR=(function(){
     '<div class="verso-sep"></div><div class="verso-brand">Vivre Clichy</div></div>'+
     '<div class="card-qr">'+qrSVG+'</div>';
 
-  var versoWHTML=
-    '<div class="verso-content"><div class="verso-name grad-text">Julie Martinez</div>'+
-    '<div class="verso-sep"></div><div class="verso-brand grad-text">Vivre Clichy</div></div>'+
-    '<div class="card-qr">'+qrSVG+'</div>';
-
   /* ── Messages par thème ── */
   var themes=[
-    { title:'Amour', messages:[
+    { title:'Amour', color:'rose', sepColor:'#FF69B4', messages:[
       { name:'Clichy, veux-tu m\u2019\u00e9pouser\u00a0?',
-        cls:'msg1', clsW:'msg1w',
-        html:'<div class="line line1">Clichy,</div><div class="line line2">veux-tu</div><div class="line line3">m\u2019\u00e9pouser\u00a0?</div>',
-        htmlW:'<div class="line line1 grad-text">Clichy,</div><div class="line line2 grad-text">veux-tu</div><div class="line line3 grad-text">m\u2019\u00e9pouser\u00a0?</div>' },
+        cls:'msg1',
+        html:'<div class="line line1">Clichy,</div><div class="line line2">veux-tu</div><div class="line line3">m\u2019\u00e9pouser\u00a0?</div>' },
       { name:'Clichy, mon amour',
-        cls:'msg4', clsW:'msg4w',
-        html:'<div class="line line1">Clichy,</div><div class="line line2">mon amour</div>',
-        htmlW:'<div class="line line1 grad-text">Clichy,</div><div class="line line2 grad-text">mon amour</div>' },
+        cls:'msg4',
+        html:'<div class="line line1">Clichy,</div><div class="line line2">mon amour</div>' },
       { name:'Aimons Clichy',
-        cls:'msg5', clsW:'msg5w',
-        html:'<div class="line">Aimons Clichy</div>',
-        htmlW:'<div class="line grad-text">Aimons Clichy</div>' },
+        cls:'msg5',
+        html:'<div class="line">Aimons Clichy</div>' },
       { name:'Par amour pour Clichy',
-        cls:'msg4', clsW:'msg4w',
-        html:'<div class="line line1">Par amour</div><div class="line line2">pour Clichy</div>',
-        htmlW:'<div class="line line1 grad-text">Par amour</div><div class="line line2 grad-text">pour Clichy</div>' },
+        cls:'msg4',
+        html:'<div class="line line1">Par amour</div><div class="line line2">pour Clichy</div>' },
       { name:'L\u2019amour commence ici',
-        cls:'msg4', clsW:'msg4w',
-        html:'<div class="line line1">L\u2019amour</div><div class="line line2">commence ici</div>',
-        htmlW:'<div class="line line1 grad-text">L\u2019amour</div><div class="line line2 grad-text">commence ici</div>' },
+        cls:'msg4',
+        html:'<div class="line line1">L\u2019amour</div><div class="line line2">commence ici</div>' },
       { name:'Clichy, je t\u2019aime',
-        cls:'msg4', clsW:'msg4w',
-        html:'<div class="line line1">Clichy,</div><div class="line line2">je t\u2019aime</div>',
-        htmlW:'<div class="line line1 grad-text">Clichy,</div><div class="line line2 grad-text">je t\u2019aime</div>' },
+        cls:'msg4',
+        html:'<div class="line line1">Clichy,</div><div class="line line2">je t\u2019aime</div>' },
       { name:'2026, le temps de l\u2019amour',
-        cls:'msg2', clsW:'msg2w',
-        html:'<div class="line year">2026</div><div class="line sub">le temps<br>de l\u2019amour</div>',
-        htmlW:'<div class="line year grad-text">2026</div><div class="line sub grad-text">le temps<br>de l\u2019amour</div>' },
+        cls:'msg2',
+        html:'<div class="line year">2026</div><div class="line sub">le temps<br>de l\u2019amour</div>' },
       { name:'2026, Clichy s\u2019aime',
-        cls:'msg2', clsW:'msg2w',
-        html:'<div class="line year">2026</div><div class="line sub">Clichy s\u2019aime</div>',
-        htmlW:'<div class="line year grad-text">2026</div><div class="line sub grad-text">Clichy s\u2019aime</div>' },
+        cls:'msg2',
+        html:'<div class="line year">2026</div><div class="line sub">Clichy s\u2019aime</div>' },
       { name:'Clichy \u2764 Julie',
-        cls:'msg3', clsW:'msg3w',
-        html:'<div class="line name">Clichy</div><div class="line heart">\u2764</div><div class="line name">Julie</div>',
-        htmlW:'<div class="line name grad-text">Clichy</div><div class="line heart grad-text">\u2764</div><div class="line name grad-text">Julie</div>' }
+        cls:'msg3',
+        html:'<div class="line name">Clichy</div><div class="line heart">\u2764</div><div class="line name">Julie</div>' }
     ]},
-    { title:'Solidarit\u00e9', messages:[
+    { title:'Solidarit\u00e9', color:'orange', sepColor:'#FF6B00', messages:[
       { name:'Ensemble pour Clichy',
-        cls:'msg4', clsW:'msg4w',
-        html:'<div class="line line1">Ensemble</div><div class="line line2">pour Clichy</div>',
-        htmlW:'<div class="line line1 grad-text">Ensemble</div><div class="line line2 grad-text">pour Clichy</div>' },
+        cls:'msg4',
+        html:'<div class="line line1">Ensemble</div><div class="line line2">pour Clichy</div>' },
       { name:'Unis par l\u2019amour de Clichy',
-        cls:'msg6', clsW:'msg6w',
-        html:'<div class="line line1">Unis par l\u2019amour</div><div class="line line2">de Clichy</div>',
-        htmlW:'<div class="line line1 grad-text">Unis par l\u2019amour</div><div class="line line2 grad-text">de Clichy</div>' },
+        cls:'msg6',
+        html:'<div class="line line1">Unis par l\u2019amour</div><div class="line line2">de Clichy</div>' },
       { name:'La solidarit\u00e9, c\u2019est de l\u2019amour',
-        cls:'msg6', clsW:'msg6w',
-        html:'<div class="line line1">La solidarit\u00e9,</div><div class="line line2">c\u2019est de l\u2019amour</div>',
-        htmlW:'<div class="line line1 grad-text">La solidarit\u00e9,</div><div class="line line2 grad-text">c\u2019est de l\u2019amour</div>' }
+        cls:'msg6',
+        html:'<div class="line line1">La solidarit\u00e9,</div><div class="line line2">c\u2019est de l\u2019amour</div>' }
     ]},
-    { title:'Amour + Solidarit\u00e9', messages:[
+    { title:'Amour + Solidarit\u00e9', color:'degrade', sepColor:'#E8453C', messages:[
       { name:'Amour et solidarit\u00e9',
-        cls:'msg4', clsW:'msg4w',
-        html:'<div class="line line1">Amour</div><div class="line line2">et solidarit\u00e9</div>',
-        htmlW:'<div class="line line1 grad-text">Amour</div><div class="line line2 grad-text">et solidarit\u00e9</div>' },
+        cls:'msg4',
+        html:'<div class="line line1">Amour</div><div class="line line2">et solidarit\u00e9</div>' },
       { name:'2026 : amour et solidarit\u00e9 pour Clichy',
-        cls:'msg7', clsW:'msg7w',
-        html:'<div class="line line1">2026 :</div><div class="line line2">amour et solidarit\u00e9</div><div class="line line3">pour Clichy</div>',
-        htmlW:'<div class="line line1 grad-text">2026 :</div><div class="line line2 grad-text">amour et solidarit\u00e9</div><div class="line line3 grad-text">pour Clichy</div>' },
+        cls:'msg7',
+        html:'<div class="line line1">2026 :</div><div class="line line2">amour et solidarit\u00e9</div><div class="line line3">pour Clichy</div>' },
       { name:'Notre programme : amour et solidarit\u00e9\u00a0!',
-        cls:'msg6', clsW:'msg6w',
-        html:'<div class="line line1">Notre programme :</div><div class="line line2">amour et solidarit\u00e9\u00a0!</div>',
-        htmlW:'<div class="line line1 grad-text">Notre programme :</div><div class="line line2 grad-text">amour et solidarit\u00e9\u00a0!</div>' }
+        cls:'msg6',
+        html:'<div class="line line1">Notre programme :</div><div class="line line2">amour et solidarit\u00e9\u00a0!</div>' }
     ]},
-    { title:'Audacieux / D\u00e9cal\u00e9', messages:[
+    { title:'Audacieux / D\u00e9cal\u00e9', color:'jaune', sepColor:'#F5B800', messages:[
       { name:'Clichy a besoin d\u2019amour',
-        cls:'msg6', clsW:'msg6w',
-        html:'<div class="line line1">Clichy a besoin</div><div class="line line2">d\u2019amour</div>',
-        htmlW:'<div class="line line1 grad-text">Clichy a besoin</div><div class="line line2 grad-text">d\u2019amour</div>' },
+        cls:'msg6',
+        html:'<div class="line line1">Clichy a besoin</div><div class="line line2">d\u2019amour</div>' },
       { name:'Faisons de Clichy une ville d\u2019amour',
-        cls:'msg6', clsW:'msg6w',
-        html:'<div class="line line1">Faisons de Clichy</div><div class="line line2">une ville d\u2019amour</div>',
-        htmlW:'<div class="line line1 grad-text">Faisons de Clichy</div><div class="line line2 grad-text">une ville d\u2019amour</div>' }
+        cls:'msg6',
+        html:'<div class="line line1">Faisons de Clichy</div><div class="line line2">une ville d\u2019amour</div>' }
     ]}
   ];
 
   /* ── Build ── */
   var n=0;
   for(var t=0;t<themes.length;t++){
+    var theme=themes[t];
     var sep=document.createElement('div');
     sep.className='theme-sep';
-    sep.textContent=themes[t].title;
+    sep.style.color=theme.sepColor;
+    sep.style.borderTopColor=theme.sepColor;
+    sep.textContent=theme.title;
     document.body.appendChild(sep);
 
-    var msgs=themes[t].messages;
+    var msgs=theme.messages;
     for(var m=0;m<msgs.length;m++){
       n++;
       var msg=msgs[m];
@@ -413,43 +313,23 @@ var QR=(function(){
       var quad=document.createElement('div');
       quad.className='quad';
 
-      // Gradient pair
       var v1=document.createElement('div');
       v1.className='variant';
       var rc1=document.createElement('div');
       rc1.innerHTML='<div class="side-label">Recto</div>';
       var card1=document.createElement('div');
-      card1.className='card recto '+msg.cls;
+      card1.className='card recto-'+theme.color+' '+msg.cls;
       card1.innerHTML=msg.html;
       rc1.appendChild(card1);
       v1.appendChild(rc1);
       var vc1=document.createElement('div');
       vc1.innerHTML='<div class="side-label">Verso</div>';
       var card2=document.createElement('div');
-      card2.className='card verso';
+      card2.className='card verso-'+theme.color;
       card2.innerHTML=versoHTML;
       vc1.appendChild(card2);
       v1.appendChild(vc1);
       quad.appendChild(v1);
-
-      // White pair
-      var v2=document.createElement('div');
-      v2.className='variant';
-      var rc2=document.createElement('div');
-      rc2.innerHTML='<div class="side-label">Recto blanc</div>';
-      var card3=document.createElement('div');
-      card3.className='card recto-w '+msg.clsW;
-      card3.innerHTML=msg.htmlW;
-      rc2.appendChild(card3);
-      v2.appendChild(rc2);
-      var vc2=document.createElement('div');
-      vc2.innerHTML='<div class="side-label">Verso blanc</div>';
-      var card4=document.createElement('div');
-      card4.className='card verso-w';
-      card4.innerHTML=versoWHTML;
-      vc2.appendChild(card4);
-      v2.appendChild(vc2);
-      quad.appendChild(v2);
 
       opt.appendChild(quad);
       document.body.appendChild(opt);
